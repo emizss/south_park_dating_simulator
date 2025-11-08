@@ -1,0 +1,111 @@
+
+*{
+    margin: 0%;
+    padding: 0%;
+
+}
+body{
+    background-color: rgba(0, 0, 0, 0.109);
+}
+form{
+    background-color: white;
+   margin-bottom: 300px;
+    margin-right: 20%;
+    margin-left: 20%;
+    border: 1px solid grey;
+    padding: 20px;
+    border-radius: 5px;
+    width: 35%;
+    display: block;
+    transform: translate(0px, 0px);
+    box-shadow: 10px 11px 10px  rgba(0, 0, 0, 0.3);
+    text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
+    
+}
+input, select, textarea{
+    text-transform: capitalize;
+    width: 100%;
+    padding-top: 7px;
+    padding-bottom: 3px;
+    border: 0px;
+    border-bottom: 1px solid black;
+}
+select{
+    color: grey;
+    font-size: 11px;
+}
+.negrito{
+    font-weight: bold;
+}
+label{
+    font-size: 9pt;
+    display: block;
+    margin-top: 20px;
+}
+.botoes{
+    margin-top: 15px;
+    text-align: right;
+}
+button{
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 8px 10px;
+    border: 0;
+    border-radius: 3px;
+}
+.confirmar{
+    background-color: #ffd02b;
+    color: white;
+}
+.confirmar:hover{
+    background-color: rgb(158, 112, 26);
+}
+.cancelar{
+    background-color: transparent;
+}
+h2{
+    margin: 0%;
+    padding: 0%;
+    font-weight: 300; 
+    color: #ffd02b
+}
+textarea{
+    height: 90px;
+}
+section{
+    
+    padding: 50px;
+    width: 100%;
+    height: 250px;
+    margin-top: 100px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px; 
+    background-color: #ffd12ba7;
+    padding: 50px;
+    margin-top: 100px;
+    
+}
+.explicacao{
+  width: 40%;
+  color: #000;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: justify;
+  margin-top: 50px;
+  margin-left: 60px;
+}
+.explicacao img{
+    width: 240px;
+    margin-bottom: 0;
+}
+.navegacao a{
+    color: #ff3131;
+    text-decoration: none;
+}
+.navegacao a:hover{
+    color: #ff31318d;
+    
+}

@@ -1,0 +1,42 @@
+ body {
+     width: 100vw;
+     background-image: url(../imagens/menu.png);
+     background-size: 85%;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-position: center center;
+     background-color: rgba(105, 72, 14, 0.453);
+     font-family: "Montserrat", sans-serif;
+     margin: 0;
+     padding: 0;
+     font-size: 30px;
+ }
+ nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+ }
+ nav a{
+    margin: 3px;
+    text-decoration: none;
+    color: black;
+    text-shadow: 1px 1px 2px rgb(255, 149, 2);
+    font-weight: 700;
+ }
+  nav a:hover{
+    margin: 3px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.517);
+    text-shadow: 1px 1px 2px rgb(255, 149, 2);
+    font-weight: 700;
+ }
+ nav h3{
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px rgb(109, 23, 23);
+    color: rgb(255, 149, 2);
+    padding: 20px;
+    background-color: rgba(165, 42, 42, 0.945);
+    border-radius: 10px 20px 30px;
+ }

@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+ body {
+    
+     width: 100vw;
+     background-image: url(../imagens/capa.png);
+     background-size: 85%;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-position: center center;
+     background-color: rgba(105, 72, 14, 0.778);
+     margin: 0;
+     padding: 0;
+
+ }
+
+ .botaoStart {
+     position: absolute;
+     top: 75vh;
+     left: 65vw;
+     display: inline-block;
+     padding: 2vh 4vw;
+     font-size: 24px;
+     font-weight: bold;
+     text-align: center;
+     text-decoration: none;
+     color: #fff;
+     background-color: #8c614d;
+     border: 2px solid #2f201a;
+     border-radius: 10px;
+     box-shadow: 5px 5px 0px #2f201a;
+     transition: all 0.3s ease;
+     cursor: pointer;
+ }
+
+ .botaoStart a {
+     font-weight: bold;
+     color: #f5f0ee;
+     text-decoration: none;
+     font-size: 14pt;
+     transition: all 0.3s ease;
+ }
+
+ .botaoStart:hover {
+     
+     text-decoration: none;
+     background-color:#3e2b22;
+     border: 2px solid black;
+     box-shadow: 5px 5px 0px black;
+ }
+ .botaoStart:hover a{
+    color: #f5f0eed4;
+ }
