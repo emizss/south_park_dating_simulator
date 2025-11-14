@@ -1,37 +1,38 @@
 <script>
     /*PERSONAGENS */
-    kyle ={
+    personagens={
+        kyle :{
      nome: "Kyle",
      unome: "Broflovski",
      idade: 10,
      interesse: "Justiça, lógica, cultura, amizade.",
      afinidade: 50
-    }
-    cartman =
+    },
+    cartman :
     {
      nome: "Eric",
      unome: "Cartman",
      idade: 10,
      interesse: "Comida, dinheiro, poder, manipulação.",
      afinidade: 40
-    }
-    kenny =
+    },
+    kenny :
     {
      nome: "Kenny",
      unome: "McCormick",
      idade: 10,
      interesse: "Aventura, amizade, humor, situações bizarras.",
      afinidade: 45
-    }
-    butters =
+    },
+    butters :
     {
      nome: "Butters",
      unome: "Stotch",
      idade: 10,
      interesse: "Brincadeiras, imaginação, aprovação dos outros.",
      afinidade: 60
-    }
-    bebe =
+    },
+    bebe :
     {
      nome: "Bebe",
      unome: "Stevens",
@@ -39,6 +40,8 @@
      interesse: "Aparência, relacionamentos, amizade.",
      afinidade: 48
     }
+    }
+    
 </script>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -124,7 +127,7 @@
             Bem-vindo à South Park Elementary! Aqui defendemos respeito, igualdade e inclusão, certo? Você se compromete a seguir essas regras?
         </p>
         <div id="pc_resp1">
-            <button type="button" class="respButton" onclick="vaiParaFala('pc',2)">
+            <button type="button" class="respButton" onclick="vaiParaFala('pc',2); relacao('kyle',10)">
                 Sim, senhor! Eu quero ser um aluno exemplar.
             </button>
             <button type="button" class="respButton" onclick="vaiParaFala('pc',3)">
@@ -218,7 +221,7 @@
             <button type="button" class="respButton" onclick="avancar()">
                 Bora!
             </button>
-            <button type="button" class="respButton" id="gameOver" onclick="fimJogo()">
+            <button type="button" class="respButton" id="gameOver" onclick="MatandoAulaFim()">
                 Vou ficar por aqui mesmo, pode ir.
             </button>
         </div>
@@ -240,13 +243,13 @@
            Ok, crianças. Matemática é simples… exceto quando não é. Agora, resolvam: quanto é 2 + 2?
         </p>
         <div id="prof1_resp2">
-            <button type="button" class="respButton" onclick="vaiParaFala('kyle',1)">
+            <button type="button" class="respButton" onclick="vaiParaFundo('aula1','Kyle'); vaiParaFala('kyle',1)">
                 É 4.
             </button>
-            <button type="button" class="respButton" onclick="vaiParaFala('cartman',1)">
+            <button type="button" class="respButton" onclick="vaiParaFundo('aula1','Cartman'); vaiParaFala('cartman',1)">
                 É… batata?
             </button>
-            <button type="button" class="respButton" onclick="vaiParaFala('butters',1)">
+            <button type="button" class="respButton" onclick="vaiParaFundo('aula1','Butters'); vaiParaFala('butters',1)">
                 Eu não gosto de matemática.
             </button>
         </div>
@@ -259,27 +262,166 @@
         <p id="butters_fala1">
             Eu também! Sempre erro na hora das provas…
         </p>
-       
-        </section>  <!-- ESPAÇO FALAS E RESPOSTAS FIM -->
-        <!-- AFINIDADE -->
-        <p>
-         Nome: <span id="nome"></span> <br>
-         Afinidade: <span id="amor"></span>
+        <div id="kyle_resp1">
+            <button type="button" class="mudarButton" onclick="avancar(); vaiParaFala('prof2',1)">
+                Ir para próxima aula <span>▶</span> 
+            </button>
+        </div>
+        <div id="cartman_resp1">
+            <button type="button" class="mudarButton" onclick="avancar(); vaiParaFala('prof2',1)">
+                Ir para próxima aula <span>▶</span> 
+            </button>
+        </div>
+        <div id="butters_resp1">
+            <button type="button" class="mudarButton" onclick="avancar(); vaiParaFala('prof2',1)">
+                Ir para próxima aula <span>▶</span> 
+            </button>
+        </div>
+        <p id="prof2_fala1">
+            Buenas, people! Hoje vamos falar sobre HTML. Sabem o que significa? Não é Hotmail, viu?
         </p>
+        <div id="prof2_resp1">
+            <button type="button" class="respButton" onclick="vaiParaFundo('aula2','Bigolin'); vaiParaFala('prof2',2)">
+                É HyperText Markup Language, professor!
+            </button>
+            <button type="button" class="respButton" onclick="vaiParaFundo('aula2','Bebe'); vaiParaFala('bebe',1)">
+                É a linguagem que manda no Google!
+            </button>
+            <button type="button" class="respButton" onclick="vaiParaFundo('aula2','Kenny'); vaiParaFala('kenny',1)">
+                É só um monte de tags chatas.
+            </button>
+        </div>
+        <p id="prof2_fala2">
+            Isso mesmo! O pessoal tá se puxando, hein.
+        </p>
+        <p id="bebe_fala1">
+            Sério?! Uau, eu achei que era coisa de hacker!
+        </p>
+         <p id="kenny_fala1">
+            HAHAHA! Mrphr, mrphr...
+        </p>
+        <div id="prof2_resp2">
+            <button type="button" class="mudarButton" onclick="avancar(); vaiParaFala('prof2',3)">
+                Continuar <span>▶</span> 
+            </button>
+        </div>
+        <div id="kenny_resp1">
+            <button type="button" class="mudarButton" onclick="avancar(); vaiParaFala('prof2',3)">
+                Continuar <span>▶</span> 
+            </button>
+        </div>
+        <div id="bebe_resp1">
+            <button type="button" class="mudarButton" onclick="avancar(); vaiParaFala('prof2',3)">
+                Continuar <span>▶</span> 
+            </button>
+        </div>
+        <p id="prof2_fala3">
+            E a tag &lt;a&gt; alguém sabe pra que serve?
+        </p>
+        <div id="prof2_resp3">
+            <button type="button" class="respButton" onclick="vaiParaFundo('aula2','Butters'); vaiParaFala('butters',2)">
+                Pra conectar corações... tipo um link entre almas!
+            </button>
+            <button type="button" class="respButton" onclick="vaiParaFundo('aula2','Bigolin'); vaiParaFala('prof2',4)">
+                Pra criar links, tipo quando clicamos e vamos pra outro site.
+            </button>
+            <button type="button" class="respButton" onclick="vaiParaFundo('aula2','Kyle'); vaiParaFala('kyle',2)">
+                Pra atrair cliques desesperados, tipo "você não vai acreditar no que aconteceu!"
+            </button>
+        </div>
+        <p id="butters_fala2">
+            Ah, que legal! Um site de amor...
+        </p>
+        <p id="prof2_fala4">
+            É por aí. Bom exemplo!
+        </p>
+        <p id="kyle_fala2">
+            Claro, clickbait, o orgulho da humanidade.
+        </p>
+        <div id="butters_resp2">
+            <button type="button" class="mudarButton" onclick="avancar(); vaiParaFala('prof2',5)">
+                Continuar <span>▶</span> 
+            </button>
+        </div>
+        <div id="prof2_resp4">
+            <button type="button" class="mudarButton" onclick="avancar(); vaiParaFala('prof2',5)">
+                Continuar <span>▶</span> 
+            </button>
+        </div>
+        <div id="kyle_resp2">
+            <button type="button" class="mudarButton" onclick="avancar(); vaiParaFala('prof2',5)">
+                Continuar <span>▶</span> 
+            </button>
+        </div>
+        <p id="prof2_fala5">
+           Bom pessoal, é só por hoje!
+        </p>
+        <div id="prof2_resp5">
+            <button type="button" class="mudarButton" onclick="avancar();">
+                Ir para o recreio <span>▶</span> 
+            </button>
+        </div>
+        </section>  <!-- ESPAÇO FALAS E RESPOSTAS FIM -->
+       
     <!-- ITENS PERMANENTES NA TELA FIM -->
-    
+     <!-- AFINIDADE -->
+        <p>
+         Nome: <span id="Nkyle"></span> <br>
+         Afinidade: <span id="Fkyle"></span>
+        </p>
+        <p>
+         Nome: <span id="Nkenny"></span> <br>
+         Afinidade: <span id="Fkenny"></span>
+        </p>
+        <p>
+         Nome: <span id="Ncartman"></span> <br>
+         Afinidade: <span id="Fcartman"></span>
+        </p>
+        <p>
+         Nome: <span id="Nbutters"></span> <br>
+         Afinidade: <span id="Fbutters"></span>
+        </p>
+        <p>
+         Nome: <span id="Ncartman"></span> <br>
+         Afinidade: <span id="Fcartman"></span>
+        </p>
+        <p>
+         Nome: <span id="Nbebe"></span> <br>
+         Afinidade: <span id="Fbebe"></span>
+        </p>
      </main>
 
     <script>
-        qntCena = 0; qntFinal = 0;
+        qntCena = 0;
 
-        function funcaoComunica()
+        function relacao(nomep,qnt)
         {
-            avancar();
-            vaiParaFala('prof1',1)
+            personagens[nomep].afinidade += qnt
+            document.getElementById(`F${nomep}`).innerHTML = personagens.nomep.afinidade
+        }
+        function telaElementos ()
+        {
+            document.getElementById('avanca').style.display = 'none';
+            document.getElementById('paiEspacoFR').style.display = 'flex';
+        }
+        function telaElementosR()
+        {
+            document.getElementById('avanca').style.display = 'flex';
+            document.getElementById('paiEspacoFR').style.display = 'none';
+        }
+        function telaElementosFim()
+        {
+             document.getElementById('avanca').style.display = 'none';
+             document.getElementById('paiEspacoFR').style.display = 'none';
+             document.querySelector('aside').style.display = 'none';
+             document.getElementById('botaoOver').style.display = 'flex';
+        }
+        function vaiParaFundo(aula,nomep)
+        {
+            document.body.style.backgroundImage = `url('cenario/${aula}${nomep}.png')`;
         }
         
-        function avancar() //primeiros momentos ate a chegar no diretorPC e mudança de cenário
+        function avancar() //AVANCA HISTORIA E CENARIO
         {
             if(qntCena == 0)
             {
@@ -288,53 +430,67 @@
             if(qntCena == 1)
             {
              document.body.style.backgroundImage = "url('cenario/diretorPC_cena.png')";
-             document.getElementById('avanca').style.display = 'none';
-             document.getElementById('paiEspacoFR').style.display = 'flex';
+             telaElementos ()
              vaiParaFala('pc',1)
             }
             if(qntCena == 2)
             {
                 document.body.style.backgroundImage = "url('cenario/wendy_apresentacao.png')";
-                document.getElementById('avanca').style.display = 'none';
-                document.getElementById('paiEspacoFR').style.display = 'flex';
+                telaElementos ()
                 vaiParaFala('wendy',1)
             }
             if(qntCena == 3)
             {
                 document.body.style.backgroundImage = "url('cenario/apresentacao (1).png')";
-                document.getElementById('avanca').style.display = 'none';
-                document.getElementById('paiEspacoFR').style.display = 'flex';
+                telaElementos ()
                 vaiParaFala('wendy',2)
             }
             if(qntCena == 4)
             {
                 document.body.style.backgroundImage = "url('cenario/apresentacao (2).png')";
-                document.getElementById('avanca').style.display = 'none';
-                document.getElementById('paiEspacoFR').style.display = 'flex';
+                telaElementos ()
                 vaiParaFala('wendy',3)
             }
             if(qntCena == 5)
             {
-                 document.body.style.backgroundImage = "url('cenario/apresentacao (3).png')";
-                document.getElementById('avanca').style.display = 'none';
-                document.getElementById('paiEspacoFR').style.display = 'flex';
+                document.body.style.backgroundImage = "url('cenario/apresentacao (3).png')";
+                telaElementos ()
                 vaiParaFala('wendy',4)
             }
             if(qntCena == 6)
             {
                 document.body.style.backgroundImage = "url('cenario/aula1Comeco.jpg')";
-                document.getElementById('avanca').style.display = 'none';
-                document.getElementById('paiEspacoFR').style.display = 'flex';
+                telaElementos ()
                 vaiParaFala('prof1',1)
             }
             if(qntCena == 7)
             {
                 document.body.style.backgroundImage = "url('cenario/turmaAula1.png')";
-                document.getElementById('avanca').style.display = 'none';
-                document.getElementById('paiEspacoFR').style.display = 'flex';
+                telaElementos ()
                 vaiParaFala('prof1',2)
             }
-            
+            if(qntCena == 8)
+            {
+                document.body.style.backgroundImage = "url('cenario/aula2.png')";
+                telaElementos ()
+                vaiParaFala('prof2',1)
+            }
+            if(qntCena == 9)
+            {
+                document.body.style.backgroundImage = "url('cenario/aula2Bigolin.png')";
+                telaElementos ()
+                vaiParaFala('prof2',3)
+            }
+            if(qntCena == 10)
+            {
+                document.body.style.backgroundImage = "url('cenario/aula2.png')";
+                telaElementos ()
+            }
+            if(qntCena == 11)
+            {
+                document.body.style.backgroundImage = "url('cenario/corredorSaidaIntervalo.png')";
+                telaElementosR ()
+            }
             qntCena++;
         }
         /*FUNCAo DIALOGO MUDANÇA*/
@@ -344,27 +500,29 @@
             document.getElementById('espacoResp').innerHTML = document.getElementById(`${nomep}_resp${nivel}`).innerHTML
             
         }
-        /* GAME OVER*/
-        function fimJogo ()
+        /* GAME OVER MATANDO AULA*/
+        function MatandoAulaFim ()
         {
-            if(qntFinal == 0)
-            {
-                document.body.style.backgroundImage = "url('cenario/finalMatandoAula.png')";
-                document.getElementById('avanca').style.display = 'none';
-                document.getElementById('paiEspacoFR').style.display = 'none';
-                document.querySelector('aside').style.display = 'none';
-                document.getElementById('botaoOver').style.display = 'flex';
-            }
-            qntFinal++;
+            document.body.style.backgroundImage = "url('cenario/finalMatandoAula.png')";
+            telaElementosFim()
         }
-    
+        
         
     
     // APRESENTACAO afinidade
-    document.getElementById("nome").innerHTML = kyle.nome;
-    document.getElementById("amor").innerHTML = kyle.afinidade;
+    document.getElementById("Nkyle").innerHTML = personagens.kyle.nome;
+    document.getElementById("Fkyle").innerHTML = personagens.kyle.afinidade;
+    document.getElementById("Nkenny").innerHTML = personagens.kenny.nome;
+    document.getElementById("Fkenny").innerHTML = personagens.kenny.afinidade;
+    document.getElementById("Ncartman").innerHTML = personagens.cartman.nome;
+    document.getElementById("Fcartman").innerHTML = personagens.cartman.afinidade;
+    document.getElementById("Nbutters").innerHTML = personagens.butters.nome;
+    document.getElementById("Fbutters").innerHTML = personagens.butters.afinidade;
+    document.getElementById("Nbebe").innerHTML = personagens.bebe.nome;
+    document.getElementById("Fbebe").innerHTML = personagens.bebe.afinidade;
    
 
     </script>
+    
 </body>
 </html>

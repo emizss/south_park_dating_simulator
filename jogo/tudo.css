@@ -251,18 +251,65 @@ nav {
     text-shadow: 1px 1px 2px rgb(255, 149, 2);
     font-weight: 700;
 }
-#prof1_fala2{
-  display: none;
-}
+
 #prof1_resp2{
   display: none;
 }
-#kyle_fala1{
+
+#butters_resp1
+{
+   display: none;
+}
+#cartman_resp1
+{
+   display: none;
+}
+#kyle_resp1
+{
+   display: none;
+}
+p[id*="fala"]
+{
   display: none;
 }
-#cartman_fala1{
+p[id*="resp"]
+{
   display: none;
 }
-#butters_fala1{
+#prof2_resp1
+{
   display: none;
 }
+#prof2_resp2
+{
+  display: none;
+}
+#bebe_resp1
+{
+  display: none;
+}
+#kenny_resp1
+{
+  display: none;
+}
+#prof2_resp3
+{
+  display: none;
+}
+#prof2_resp4
+{
+  display: none;
+}
+#butters_resp2
+{
+  display: none;
+}
+#kyle_resp2
+{
+  display: none;
+}
+#prof2_resp5
+{
+  display: none;
+}
+
