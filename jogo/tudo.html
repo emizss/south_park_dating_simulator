@@ -14,7 +14,7 @@
      unome: "Cartman",
      idade: 10,
      interesse: "Comida, dinheiro, poder, manipulação.",
-     afinidade: 40
+     afinidade: 34
     },
     kenny :
     {
@@ -22,7 +22,7 @@
      unome: "McCormick",
      idade: 10,
      interesse: "Aventura, amizade, humor, situações bizarras.",
-     afinidade: 45
+     afinidade: 38
     },
     butters :
     {
@@ -30,7 +30,7 @@
      unome: "Stotch",
      idade: 10,
      interesse: "Brincadeiras, imaginação, aprovação dos outros.",
-     afinidade: 60
+     afinidade: 42
     },
     bebe :
     {
@@ -38,7 +38,7 @@
      unome: "Stevens",
      idade: 10,
      interesse: "Aparência, relacionamentos, amizade.",
-     afinidade: 48
+     afinidade: 46
     }
     }
     
@@ -127,13 +127,13 @@
             Bem-vindo à South Park Elementary! Aqui defendemos respeito, igualdade e inclusão, certo? Você se compromete a seguir essas regras?
         </p>
         <div id="pc_resp1">
-            <button type="button" class="respButton" onclick="vaiParaFala('pc',2); relacao('kyle',10)">
+            <button type="button" class="respButton" onclick="vaiParaFala('pc',2); relacao('kyle',10); relacao('bebe',10)">
                 Sim, senhor! Eu quero ser um aluno exemplar.
             </button>
-            <button type="button" class="respButton" onclick="vaiParaFala('pc',3)">
+            <button type="button" class="respButton" onclick="vaiParaFala('pc',3); relacao('butters',10); relacao('kenny',10)">
                 Ahn… vou tentar, eu acho.
             </button>
-            <button type="button" class="respButton" onclick="vaiParaFala('pc',4)">
+            <button type="button" class="respButton" onclick="vaiParaFala('pc',4); relacao('cartman',10)">
                 Essas regras parecem bobagem.
             </button>
         </div>
@@ -176,13 +176,13 @@
             Esse é o corredor em que as aulas acontecem, inclusive a nossa!
         </p>
         <div id="wendy_resp2">
-            <button type="button" class="respButton" onclick=" avancar()">
+            <button type="button" class="respButton" onclick=" avancar(); relacao('bebe',10); relacao('butters',10)">
                 Ah, nós somos colegas? Que legal!
             </button>
-            <button type="button" class="respButton" onclick="avancar()">
+            <button type="button" class="respButton" onclick="avancar(); relacao('cartman',10);">
                 Nossa, esse bláblá todo... todos da escola são como você?
             </button>
-            <button type="button" class="respButton" onclick="avancar()">
+            <button type="button" class="respButton" onclick="avancar(); relacao('kyle',10); relacao('kenny',10)">
                 Ah, ok.
             </button>
         </div>
@@ -190,13 +190,13 @@
            Bom, esse é o refeitório. Aqui o lanche custa entre 3 a 10 moedas.
         </p>
         <div id="wendy_resp3">
-            <button type="button" class="respButton" onclick="avancar()">
+            <button type="button" class="respButton" onclick="avancar(); relacao('cartman',10)">
                 Hmm, espero que tenha comida gostosa.
             </button>
-            <button type="button" class="respButton" onclick="avancar()">
+            <button type="button" class="respButton" onclick="avancar(); relacao('bebe',10); relacao('kyle',10)">
                 Ok, podemos prosseguir?
             </button>
-            <button type="button" class="respButton" onclick="avancar()">
+            <button type="button" class="respButton" onclick="avancar(); relacao('butters',10); relacao('kenny',10)">
                 Certo, obrigada por avisar o preço!
             </button>
         </div>
@@ -204,13 +204,13 @@
            Por fim, aqui é a quadra. Acho que mostrei o mais importante!
         </p>
         <div id="wendy_resp4">
-            <button type="button" class="respButton" onclick="vaiParaFala('wendy',5)">
+            <button type="button" class="respButton" onclick="vaiParaFala('wendy',5); relacao('butters',10); relacao('kyle',10)">
                 Agora não tem como eu me perder, hahaha.
             </button>
-            <button type="button" class="respButton" onclick="vaiParaFala('wendy',5)">
+            <button type="button" class="respButton" onclick="vaiParaFala('wendy',5); relacao('cartman',10)">
                 Aham...
             </button>
-            <button type="button" class="respButton" onclick="vaiParaFala('wendy',5)">
+            <button type="button" class="respButton" onclick="vaiParaFala('wendy',5); relacao('bebe',10); relacao('kenny',10)">
                 Obrigado.
             </button>
         </div>
@@ -229,13 +229,13 @@
            Boa tarde, crianças! Hoje temos um novo integrante na turma.
         </p>
         <div id="prof1_resp1">
-            <button type="button" class="respButton" onclick="avancar()">
+            <button type="button" class="respButton" onclick="avancar(); relacao('kyle',10)">
                 Sim, professora. Sou eu. 
             </button>
-            <button type="button" class="respButton"  onclick="avancar()">
+            <button type="button" class="respButton"  onclick="avancar(); relacao('bebe',10); relacao('cartman',10)">
                 Se você é homem por que esta se vestindo de mulher?
             </button>
-            <button type="button" class="respButton"  onclick="avancar()">
+            <button type="button" class="respButton"  onclick="avancar(); relacao('kenny',10); relacao('butters',10)">
                 Sou eu, estou gostando daqui!
             </button>
         </div>
@@ -243,13 +243,13 @@
            Ok, crianças. Matemática é simples… exceto quando não é. Agora, resolvam: quanto é 2 + 2?
         </p>
         <div id="prof1_resp2">
-            <button type="button" class="respButton" onclick="vaiParaFundo('aula1','Kyle'); vaiParaFala('kyle',1)">
+            <button type="button" class="respButton" onclick="vaiParaFundo('aula1','Kyle'); vaiParaFala('kyle',1); relacao('bebe',10); relacao('kyle',10)">
                 É 4.
             </button>
-            <button type="button" class="respButton" onclick="vaiParaFundo('aula1','Cartman'); vaiParaFala('cartman',1)">
+            <button type="button" class="respButton" onclick="vaiParaFundo('aula1','Cartman'); vaiParaFala('cartman',1);relacao('cartman',10)">
                 É… batata?
             </button>
-            <button type="button" class="respButton" onclick="vaiParaFundo('aula1','Butters'); vaiParaFala('butters',1)">
+            <button type="button" class="respButton" onclick="vaiParaFundo('aula1','Butters'); vaiParaFala('butters',1); relacao('butters',10); relacao('kenny',10)">
                 Eu não gosto de matemática.
             </button>
         </div>
@@ -281,13 +281,13 @@
             Buenas, people! Hoje vamos falar sobre HTML. Sabem o que significa? Não é Hotmail, viu?
         </p>
         <div id="prof2_resp1">
-            <button type="button" class="respButton" onclick="vaiParaFundo('aula2','Bigolin'); vaiParaFala('prof2',2)">
+            <button type="button" class="respButton" onclick="vaiParaFundo('aula2','Bigolin'); vaiParaFala('prof2',2); relacao('butters',10); relacao('kyle',10)">
                 É HyperText Markup Language, professor!
             </button>
-            <button type="button" class="respButton" onclick="vaiParaFundo('aula2','Bebe'); vaiParaFala('bebe',1)">
+            <button type="button" class="respButton" onclick="vaiParaFundo('aula2','Bebe'); vaiParaFala('bebe',1); relacao('bebe',10); relacao('cartman',10)">
                 É a linguagem que manda no Google!
             </button>
-            <button type="button" class="respButton" onclick="vaiParaFundo('aula2','Kenny'); vaiParaFala('kenny',1)">
+            <button type="button" class="respButton" onclick="vaiParaFundo('aula2','Kenny'); vaiParaFala('kenny',1); relacao('kenny',10)">
                 É só um monte de tags chatas.
             </button>
         </div>
@@ -319,13 +319,13 @@
             E a tag &lt;a&gt; alguém sabe pra que serve?
         </p>
         <div id="prof2_resp3">
-            <button type="button" class="respButton" onclick="vaiParaFundo('aula2','Butters'); vaiParaFala('butters',2)">
+            <button type="button" class="respButton" onclick="vaiParaFundo('aula2','Butters'); vaiParaFala('butters',2); relacao('bebe',10); relacao('butters',10)">
                 Pra conectar corações... tipo um link entre almas!
             </button>
-            <button type="button" class="respButton" onclick="vaiParaFundo('aula2','Bigolin'); vaiParaFala('prof2',4)">
+            <button type="button" class="respButton" onclick="vaiParaFundo('aula2','Bigolin'); vaiParaFala('prof2',4); relacao('bebe',10); relacao('kyle',10)">
                 Pra criar links, tipo quando clicamos e vamos pra outro site.
             </button>
-            <button type="button" class="respButton" onclick="vaiParaFundo('aula2','Kyle'); vaiParaFala('kyle',2)">
+            <button type="button" class="respButton" onclick="vaiParaFundo('aula2','Kyle'); vaiParaFala('kyle',2); relacao('cartman',10); relacao('kenny',10)">
                 Pra atrair cliques desesperados, tipo "você não vai acreditar no que aconteceu!"
             </button>
         </div>
@@ -374,10 +374,6 @@
          Afinidade: <span id="Fkenny"></span>
         </p>
         <p>
-         Nome: <span id="Ncartman"></span> <br>
-         Afinidade: <span id="Fcartman"></span>
-        </p>
-        <p>
          Nome: <span id="Nbutters"></span> <br>
          Afinidade: <span id="Fbutters"></span>
         </p>
@@ -397,7 +393,7 @@
         function relacao(nomep,qnt)
         {
             personagens[nomep].afinidade += qnt
-            document.getElementById(`F${nomep}`).innerHTML = personagens.nomep.afinidade
+            document.getElementById(`F${nomep}`).innerHTML = personagens[nomep].afinidade
         }
         function telaElementos ()
         {
