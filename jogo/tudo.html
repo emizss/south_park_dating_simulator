@@ -108,6 +108,12 @@
                 <img src="icones/audio.png" alt="icone som">
             </div>
         </footer>
+        <section id="dinheiro">
+            <div>
+                <p>Moedas: <span id="moedas">0</span></p>
+            </div>
+        </section>
+        <!-- ITENS PERMANENTES NA TELA FIM -->
         <!-- BOTOES GAMEOVER -->
         <nav id="botaoOver">
             <a href="/jogo/tudo.html">TENTAR NOVAMENTE</a>
@@ -357,13 +363,47 @@
            Bom pessoal, é só por hoje!
         </p>
         <div id="prof2_resp5">
-            <button type="button" class="mudarButton" onclick="avancar();">
+            <button type="button" class="mudarButton" onclick="avancar(); vaiParaDecisao('refeitorio',1)">
                 Ir para o recreio <span>▶</span> 
             </button>
         </div>
+        <p id="chef_fala1">
+           Você parece faminto. Ou apaixonado... Enfim, para você conseguir comprar o seu lanche,
+           precisa jogar o minigame para adquirir moedas. Boa sorte!
+        </p>
+        <div id="chef_resp1">
+            <button type="button" class="mudarButton" onclick="jogarCartmanOuHitler()">
+                Jogar <span>▶</span> 
+            </button>
+        </div>
         </section>  <!-- ESPAÇO FALAS E RESPOSTAS FIM -->
-       
-    <!-- ITENS PERMANENTES NA TELA FIM -->
+        <!-- ESPACO BTN DECISAO -->
+       <section id="paiEspacoD">
+        
+        
+       </section>
+       <div id="refeitorio1">
+            <button type="button" class="opBtn" onclick="vaiParaFundo('refeitorio','Chegada'); vaiParaDecisao('refeitorio',2)">
+                Lanchar
+            </button>
+            <button type="button" class="opBtn" onclick="vaiParaDecisao('refeitorio',3)">
+                Não comer nada
+            </button>
+        </div>
+        <div id="refeitorio2">
+            <button type="button" class="opBtn" onclick=" avancar(); vaiParaFala('chef', 1)">
+                Entrar na fila
+            </button>
+        </div>
+        <div id="refeitorio3">
+            <button type="button" class="opBtn" onclick=" vaiParaFundo()">
+                Sentar sozinho
+            </button>
+            <button type="button" class="opBtn" onclick=" vaiParaFundo()">
+                Sentar com os colegas
+            </button>
+        </div>
+    
      <!-- AFINIDADE -->
         <p>
          Nome: <span id="Nkyle"></span> <br>
@@ -399,17 +439,27 @@
         {
             document.getElementById('avanca').style.display = 'none';
             document.getElementById('paiEspacoFR').style.display = 'flex';
+            document.getElementById('paiEspacoD').style.display = 'none';
+            
         }
         function telaElementosR()
         {
             document.getElementById('avanca').style.display = 'flex';
             document.getElementById('paiEspacoFR').style.display = 'none';
+            document.getElementById('paiEspacoD').style.display = 'none';
+        }
+        function telaElementosRR()
+        {
+            document.getElementById('paiEspacoFR').style.display = 'none';
+            document.getElementById('avanca').style.display = 'none';
+            document.getElementById('paiEspacoD').style.display = 'flex';
         }
         function telaElementosFim()
         {
              document.getElementById('avanca').style.display = 'none';
              document.getElementById('paiEspacoFR').style.display = 'none';
              document.querySelector('aside').style.display = 'none';
+             document.getElementById('paiEspacoD').style.display = 'none';
              document.getElementById('botaoOver').style.display = 'flex';
         }
         function vaiParaFundo(aula,nomep)
@@ -422,6 +472,7 @@
             if(qntCena == 0)
             {
              document.body.style.backgroundImage = "url('cenario/2.png')";
+              document.getElementById('paiEspacoD').style.display = 'none';
             }
             if(qntCena == 1)
             {
@@ -489,7 +540,12 @@
             }
              if(qntCena == 12)
             {
-                document.body.style.backgroundImage = "url('cenario/refeitorioChegada.png')";
+                document.body.style.backgroundImage = "url('cenario/refeitorioEscolha.png')";
+                telaElementosRR()
+            }
+            if(qntCena == 13)
+            {
+                document.body.style.backgroundImage = "url('cenario/refeitorioChef.png')";
                 telaElementos ()
             }
             qntCena++;
@@ -507,7 +563,11 @@
             document.body.style.backgroundImage = "url('cenario/finalMatandoAula.png')";
             telaElementosFim()
         }
-        
+         function vaiParaDecisao(op,nivel)
+        {
+            document.getElementById('paiEspacoD').innerHTML = document.getElementById(`${op}${nivel}`).innerHTML;
+            
+        }
         
     
     // APRESENTACAO afinidade
@@ -521,7 +581,84 @@
     document.getElementById("Fbutters").innerHTML = personagens.butters.afinidade;
     document.getElementById("Nbebe").innerHTML = personagens.bebe.nome;
     document.getElementById("Fbebe").innerHTML = personagens.bebe.afinidade;
-   
+   // VARIÁVEL GLOBAL DE MOEDAS
+let moedas = 0;
+function atualizarMoedas() {
+    document.getElementById("moedas").textContent = moedas;
+}
+// FUNÇÃO DO JOGO
+function jogarCartmanOuHitler() {
+
+    // Falas do jogo
+    const perguntas = [
+        { frase: "Eu não tenho amigos, só pessoas que eu uso.", autor: "cartman" },
+        { frase: "Eu não sou racista, só acho que as pessoas precisam ficar com o seu próprio tipo.", autor: "cartman" },
+        { frase: "Respeito é bom, mas não é comigo.", autor: "cartman" },
+        { frase: "Eu não quero ser simpático. Quero estar certo.", autor: "cartman" },
+        { frase: "Eu não sou gordo, é retenção de personalidade!", autor: "cartman" },
+
+        { frase: "Aquele que quer viver deve lutar.", autor: "hitler" },
+        { frase: "A força reside no povo disciplinado.", autor: "hitler" },
+        { frase: "A vitória será daquele que perseverar.", autor: "hitler" },
+        { frase: "O líder deve ser forte e impor sua vontade.", autor: "hitler" },
+        { frase: "A educação é o campo de batalha do futuro.", autor: "hitler" }
+    ];
+
+    let indice = 0; // começo do jogo
+
+    function perguntar() {
+
+        // Se chegou na 10ª pergunta → fim definitivo
+        if (indice >= perguntas.length) {
+            alert("Você completou todas as 10 perguntas!\nMoedas totais: " + moedas + "\nAgora só é possível sair.");
+            return;
+        }
+
+        const atual = perguntas[indice];
+
+        let resposta = prompt(
+            `Pergunta ${indice + 1}/10\n\n"${atual.frase}"\n\nQuem falou isso?\n1) Eric Cartman\n2) Hitler`
+        );
+
+        if (resposta === null) {
+            alert("Jogo cancelado.");
+            return;
+        }
+
+        resposta = resposta.trim();
+
+        let correta = (resposta === "1" && atual.autor === "cartman") ||
+                      (resposta === "2" && atual.autor === "hitler");
+
+        if (correta) {
+            moedas += 5;
+            atualizarMoedas();
+            alert("✔ Acertou! +5 moedas\nTotal: " + moedas);
+        } else {
+            alert("❌ Errou!\nSem moedas dessa vez.");
+        }
+
+        indice++;
+
+        // Se chegou ao fim → não deixa continuar
+        if (indice >= perguntas.length) {
+            alert("Fim das 10 perguntas!\nMoedas finais: " + moedas);
+            return;
+        }
+
+        // DESEJA CONTINUAR?
+        let continuar = confirm("Quer continuar?");
+        if (continuar) {
+            perguntar();
+        } else {
+            alert("Jogo pausado. Você parou na pergunta " + indice + ".");
+        }
+    }
+
+    // inicia o jogo
+    perguntar();
+}
+
 
     </script>
     

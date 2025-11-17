@@ -272,10 +272,7 @@ p[id*="fala"]
 {
   display: none;
 }
-p[id*="resp"]
-{
-  display: none;
-}
+
 #prof2_resp1
 {
   display: none;
@@ -312,4 +309,42 @@ p[id*="resp"]
 {
   display: none;
 }
+#paiEspacoD{
+  display: none;
+  justify-content: center;
+  
+}
 
+.opBtn{
+  margin-bottom: 8px;
+  padding: 20px;
+  height: 5px;
+  background-color: rgba(255, 123, 0, 0.772);
+  border-radius: 5px;
+  color: white;
+  border: none;
+  border: 1px solid orangered;
+  margin-right: 5px;
+}
+#refeitorio1{
+  display: none;
+}
+#refeitorio2{
+  display: none;
+}
+#refeitorio3{
+  display: none;
+}
+#chef_resp1{
+  display: none;
+}
+#dinheiro
+{
+  display: flex;
+  justify-self: left;
+}
+#moedas
+{
+  font-size: 30px;
+color: green;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    jogarCartmanOuHitler();
+    <button type="button" onclick="">
+
+    </button>
+    <script>
+        // VARIÁVEL GLOBAL DE MOEDAS
+let moedas = 0;
+
+// FUNÇÃO DO JOGO
+function jogarCartmanOuHitler() {
+
+    // Falas do jogo
+    const perguntas = [
+        { frase: "Eu não tenho amigos, só pessoas que eu uso.", autor: "cartman" },
+        { frase: "Você sabe, eu aprendi algo hoje...", autor: "cartman" },
+        { frase: "Respeito é bom, mas não é comigo.", autor: "cartman" },
+        { frase: "Vocês vão me respeitar!", autor: "cartman" },
+        { frase: "Eu não sou gordo, é retenção de personalidade!", autor: "cartman" },
+
+        { frase: "Aquele que quer viver deve lutar.", autor: "hitler" },
+        { frase: "A força reside no povo disciplinado.", autor: "hitler" },
+        { frase: "A vitória será daquele que perseverar.", autor: "hitler" },
+        { frase: "O líder deve ser forte e impor sua vontade.", autor: "hitler" },
+        { frase: "A educação é o campo de batalha do futuro.", autor: "hitler" }
+    ];
+
+    let indice = 0; // começo do jogo
+
+    function perguntar() {
+
+        // Se chegou na 10ª pergunta → fim definitivo
+        if (indice >= perguntas.length) {
+            alert("Você completou todas as 10 perguntas!\nMoedas totais: " + moedas + "\nAgora só é possível sair.");
+            return;
+        }
+
+        const atual = perguntas[indice];
+
+        let resposta = prompt(
+            `Pergunta ${indice + 1}/10\n\n"${atual.frase}"\n\nQuem falou isso?\n1) Eric Cartman\n2) Hitler`
+        );
+
+        if (resposta === null) {
+            alert("Jogo cancelado.");
+            return;
+        }
+
+        resposta = resposta.trim();
+
+        let correta = (resposta === "1" && atual.autor === "cartman") ||
+                      (resposta === "2" && atual.autor === "hitler");
+
+        if (correta) {
+            moedas += 5;
+            alert("✔ Acertou! +5 moedas\nTotal: " + moedas);
+        } else {
+            alert("❌ Errou!\nSem moedas dessa vez.");
+        }
+
+        indice++;
+
+        // Se chegou ao fim → não deixa continuar
+        if (indice >= perguntas.length) {
+            alert("Fim das 10 perguntas!\nMoedas finais: " + moedas);
+            return;
+        }
+
+        // DESEJA CONTINUAR?
+        let continuar = confirm("Quer continuar?");
+        if (continuar) {
+            perguntar();
+        } else {
+            alert("Jogo pausado. Você parou na pergunta " + indice + ".");
+        }
+    }
+
+    // inicia o jogo
+    perguntar();
+}
+
+    </script>
+</body>
+</html>
