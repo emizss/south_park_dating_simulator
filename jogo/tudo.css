@@ -326,6 +326,9 @@ p[id*="fala"]
   border: 1px solid orangered;
   margin-right: 5px;
 }
+.opBtn:hover{
+  cursor: pointer;
+}
 #refeitorio1{
   display: none;
 }
@@ -340,11 +343,19 @@ p[id*="fala"]
 }
 #dinheiro
 {
-  display: flex;
-  justify-self: left;
+  position: absolute;
+  top: 0;
+  padding: 10px;
+  border-radius: 10px;
+  left: 115px;
+}
+
+#dinheiro p{
+  color: red;
 }
 #moedas
 {
   font-size: 30px;
 color: green;
+
 }

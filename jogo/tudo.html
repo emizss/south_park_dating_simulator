@@ -110,7 +110,7 @@
         </footer>
         <section id="dinheiro">
             <div>
-                <p>Moedas: <span id="moedas">0</span></p>
+                <p> <strong>$$</strong> <span id="moedas">0</span></p>
             </div>
         </section>
         <!-- ITENS PERMANENTES NA TELA FIM -->
@@ -405,7 +405,9 @@
         </div>
     
      <!-- AFINIDADE -->
-        <p>
+      <!-- 
+     
+      <p>
          Nome: <span id="Nkyle"></span> <br>
          Afinidade: <span id="Fkyle"></span>
         </p>
@@ -425,6 +427,8 @@
          Nome: <span id="Nbebe"></span> <br>
          Afinidade: <span id="Fbebe"></span>
         </p>
+      -->
+       
      </main>
 
     <script>
@@ -460,6 +464,7 @@
              document.getElementById('paiEspacoFR').style.display = 'none';
              document.querySelector('aside').style.display = 'none';
              document.getElementById('paiEspacoD').style.display = 'none';
+             document.getElementById('dinheiro').style.display = 'none';
              document.getElementById('botaoOver').style.display = 'flex';
         }
         function vaiParaFundo(aula,nomep)
@@ -582,7 +587,7 @@
     document.getElementById("Nbebe").innerHTML = personagens.bebe.nome;
     document.getElementById("Fbebe").innerHTML = personagens.bebe.afinidade;
    // VARIÁVEL GLOBAL DE MOEDAS
-let moedas = 0;
+    moedas = 0;
 function atualizarMoedas() {
     document.getElementById("moedas").textContent = moedas;
 }
@@ -604,7 +609,7 @@ function jogarCartmanOuHitler() {
         { frase: "A educação é o campo de batalha do futuro.", autor: "hitler" }
     ];
 
-    let indice = 0; // começo do jogo
+     indice = 0; // começo do jogo
 
     function perguntar() {
 
@@ -620,7 +625,7 @@ function jogarCartmanOuHitler() {
             `Pergunta ${indice + 1}/10\n\n"${atual.frase}"\n\nQuem falou isso?\n1) Eric Cartman\n2) Hitler`
         );
 
-        if (resposta === null) {
+        if (resposta === 0) {
             alert("Jogo cancelado.");
             return;
         }
