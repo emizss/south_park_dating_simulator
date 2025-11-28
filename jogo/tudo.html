@@ -110,7 +110,7 @@
         </footer>
         <section id="dinheiro">
             <div>
-                <p> <strong>$$</strong> <span id="moedas">0</span></p>
+                <p> <strong>$$</strong> <span id="moeda">0</span></p>
             </div>
         </section>
         <!-- ITENS PERMANENTES NA TELA FIM -->
@@ -405,7 +405,7 @@
         </div>
     
      <!-- AFINIDADE -->
-      <!-- 
+      
      
       <p>
          Nome: <span id="Nkyle"></span> <br>
@@ -427,7 +427,7 @@
          Nome: <span id="Nbebe"></span> <br>
          Afinidade: <span id="Fbebe"></span>
         </p>
-      -->
+      
        
      </main>
 
@@ -553,6 +553,10 @@
                 document.body.style.backgroundImage = "url('cenario/refeitorioChef.png')";
                 telaElementos ()
             }
+            if(qntCena == 14)
+            {
+                document.body.style.backgroundImage = "url('cenario/refeitorioOP.png')";
+            }
             qntCena++;
         }
         /*FUNCAo DIALOGO MUDANÇA*/
@@ -589,7 +593,7 @@
    // VARIÁVEL GLOBAL DE MOEDAS
     moedas = 0;
 function atualizarMoedas() {
-    document.getElementById("moedas").textContent = moedas;
+    document.getElementById("moeda").innerHTML = moedas;
 }
 // FUNÇÃO DO JOGO
 function jogarCartmanOuHitler() {
@@ -613,10 +617,10 @@ function jogarCartmanOuHitler() {
 
     function perguntar() {
 
-        // Se chegou na 10ª pergunta → fim definitivo
+        // Se chegou na 10 pergunta = fim definitivo
         if (indice >= perguntas.length) {
             alert("Você completou todas as 10 perguntas!\nMoedas totais: " + moedas + "\nAgora só é possível sair.");
-            return;
+            
         }
 
         const atual = perguntas[indice];
@@ -627,7 +631,7 @@ function jogarCartmanOuHitler() {
 
         if (resposta === 0) {
             alert("Jogo cancelado.");
-            return;
+            
         }
 
         resposta = resposta.trim();
@@ -638,17 +642,17 @@ function jogarCartmanOuHitler() {
         if (correta) {
             moedas += 5;
             atualizarMoedas();
-            alert("✔ Acertou! +5 moedas\nTotal: " + moedas);
+            alert("Acertou! +5 moedas\nTotal: " + moedas);
         } else {
-            alert("❌ Errou!\nSem moedas dessa vez.");
+            alert("Errou!\nSem moedas dessa vez.");
         }
 
         indice++;
 
-        // Se chegou ao fim → não deixa continuar
+        // Se chegou ao fim = não deixa continuar
         if (indice >= perguntas.length) {
             alert("Fim das 10 perguntas!\nMoedas finais: " + moedas);
-            return;
+            
         }
 
         // DESEJA CONTINUAR?
@@ -657,6 +661,7 @@ function jogarCartmanOuHitler() {
             perguntar();
         } else {
             alert("Jogo pausado. Você parou na pergunta " + indice + ".");
+            avancar();
         }
     }
 
