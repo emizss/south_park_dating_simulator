@@ -404,11 +404,16 @@
             </button>
         </div>
         <div id="refeitorio3">
-            <button type="button" class="opBtn" onclick=" vaiParaFundo()">
+            <button type="button" class="opBtn" onclick=" vaiParaFundo('refeitorio','Sozinho'); vaiParaDecisao('refeitorio',4)">
                 Sentar sozinho
             </button>
-            <button type="button" class="opBtn" onclick=" vaiParaFundo()">
+            <button type="button" class="opBtn" onclick=" vaiParaFundo('refeitorio','Colegas'); vaiParaDecisao('refeitorio',4)">
                 Sentar com os colegas
+            </button>
+        </div>
+         <div id="refeitorio4">
+            <button type="button" class="opBtn" onclick="avancar()">
+                Ir brincar no parque
             </button>
         </div>
         <!-- op compra comida -->
@@ -462,7 +467,15 @@
 
     <script>
         qntCena = 0;
+        //maior afinidade
+        function maisAmor()
+        {
 
+        }
+        function finalAmor()
+        {
+
+        }
         function relacao(nomep,qnt)
         {
             personagens[nomep].afinidade += qnt
@@ -605,6 +618,15 @@
                 telaElementos ()
                 vaiParaFala('chef',2)
             }
+            if(qntCena == 15)
+            {
+                document.body.style.backgroundImage = "url('cenario/recreioParque.png')";
+                telaElementosR()
+            }
+            if(qntCena == 16)
+            {
+                finalAmor();
+            }
             qntCena++;
         }
         /*FUNCAo DIALOGO MUDANÇA*/
@@ -644,14 +666,6 @@ function atualizarMoedas() {
     document.getElementById("moeda").innerHTML = moedas;
 }
 
-// function compra(prec){
-    // if(moedas >= prec){
-        // moedas -= prec; // diminui
-        // document.getElementById("moeda").innerText = moedas;
-    // } else {
-        // alert("Você não tem moedas suficientes!");
-    // }
-// }
 function compra(prec){
     if(moedas >=prec)
     {
@@ -659,7 +673,7 @@ function compra(prec){
         atualizarMoedas();
     }
     else{
-        alert("Você não tem moedas suficientes. Jogue mais uma vez para o chef te entregar o prato.");
+        alert("Você não tem moedas suficientes. Jogue mais uma vez para o chef te entregar o prato que você escolheu.");
         jogarCartmanOuHitler();
         telaElementosOP();
     }   
