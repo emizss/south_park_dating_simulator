@@ -467,25 +467,12 @@
 
     <script>
         qntCena = 0;
-        //maior afinidade
-        function maisAmor()
-        {
-
-        }
-        function finalAmor()
-        {
-
-        }
+        //somando afinidade
         function relacao(nomep,qnt)
         {
             personagens[nomep].afinidade += qnt
             document.getElementById(`F${nomep}`).innerHTML = personagens[nomep].afinidade
         }
-        function voltaParaCompra()
-        {
-
-        }
-        function telaElementos ()
         {
             document.getElementById('avanca').style.display = 'none';
             document.getElementById('paiEspacoFR').style.display = 'flex';
@@ -647,7 +634,65 @@
             document.getElementById('paiEspacoD').innerHTML = document.getElementById(`${op}${nivel}`).innerHTML;
             
         }
+         apaixonado = '';
+        /* calculando e fazend cena final AMORR*/
+        function maisAmor()
+        {
+            // Kyle
+            if (
+                personagens.kyle.afinidade > personagens.kenny.afinidade &&
+                personagens.kyle.afinidade > personagens.cartman.afinidade &&
+                personagens.kyle.afinidade > personagens.butters.afinidade &&
+                personagens.kyle.afinidade > personagens.bebe.afinidade
+            ) {
+                apaixonado = personagens.kyle.nome;
+            }
+
+            // Kenny
+            if (
+                personagens.kenny.afinidade > personagens.kyle.afinidade &&
+                personagens.kenny.afinidade > personagens.cartman.afinidade &&
+                personagens.kenny.afinidade > personagens.butters.afinidade &&
+                personagens.kenny.afinidade > personagens.bebe.afinidade
+            ) {
+                apaixonado = personagens.kenny.nome;
+            }
+
+            // Cartman
+            if (
+                personagens.cartman.afinidade > personagens.kyle.afinidade &&
+                personagens.cartman.afinidade > personagens.kenny.afinidade &&
+                personagens.cartman.afinidade > personagens.butters.afinidade &&
+                personagens.cartman.afinidade > personagens.bebe.afinidade
+            ) {
+                apaixonado = personagens.cartman.nome;
+            }
+
+            // Butters
+            if (
+                personagens.butters.afinidade > personagens.kyle.afinidade &&
+                personagens.butters.afinidade > personagens.kenny.afinidade &&
+                personagens.butters.afinidade > personagens.cartman.afinidade &&
+                personagens.butters.afinidade > personagens.bebe.afinidade
+            ) {
+                apaixonado = personagens.butters.nome;
+            }
+
+            // Bebe
+            if (
+                personagens.bebe.afinidade > personagens.kyle.afinidade &&
+                personagens.bebe.afinidade > personagens.kenny.afinidade &&
+                personagens.bebe.afinidade > personagens.cartman.afinidade &&
+                personagens.bebe.afinidade > personagens.butters.afinidade
+            ) {
+                apaixonado = personagens.bebe.nome;
+            }
+        }
         
+        function finalAmor()
+        {
+            
+        }
     
     // APRESENTACAO afinidade
     document.getElementById("Nkyle").innerHTML = personagens.kyle.nome;
