@@ -357,5 +357,27 @@ p[id*="fala"]
 {
   font-size: 30px;
 color: green;
-
+}
+#chef_resp2{
+  display: none;
+}
+#opComida{
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  gap: 100px;
+}
+#opComida p{
+  color: green;
+  font-weight: bolder;
+  text-align: center;
+  font-size: 30px;
+}
+#opComida button
+{
+  border: none;
+}
+#opComida button:hover{
+  transform: scale(1.1); 
+  border: 2px solid gray;
 }
