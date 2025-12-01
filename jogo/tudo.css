@@ -73,9 +73,13 @@ nav {
 }
 #iconesP img{
     width: 60px;
+    width: 65px;
+    height: 65px;
     border-radius: 100px;
     margin-top: 8px;
-    
+    background: white;
+    position: relative;
+    z-index: 2;
 }
 #iconesP{
     display: flex;
@@ -83,7 +87,7 @@ nav {
     justify-self: center;
     position: absolute;
     margin-top: 100px;
-    margin-right: 1060px;
+    margin-right: 1030px;
 }
 #iconesP img:hover {
   transform: scale(1.1); 
@@ -410,4 +414,45 @@ color: green;
 }
 #refeitorio5{
   display: none;
+}
+
+.afinidadeTela{
+    position: absolute;
+    left: 50px;
+
+    background: white;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;        
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: bold;
+    font-size: 16px;
+
+    box-shadow: 4px 0 0 rgba(0,0,0,0.25);
+    z-index: 3;
+}
+#Fkenny{
+  color: orangered;
+}
+#Fkyle{
+  color: green;
+}
+#Fbutters{
+  color: rgb(10, 209, 209);
+}
+#Fcartman{
+  color: rgb(206, 29, 29);
+}
+#Fbebe{
+  color: rgb(224, 224, 17);
+}
+#iconesP > div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
 }
