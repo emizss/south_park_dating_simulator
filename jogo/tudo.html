@@ -60,7 +60,7 @@
                     <button type="button"><img  class="menuImg" src="icones/menuImg.png" alt="icone menu"></button> 
                     <ul>
                         <li>
-                             <button type="button" class="menuBtn" onclick="mostrarLog()">
+                             <button type="button" class="menuBtn" onclick="">
                                 historico
                             </button>
                         </li>
@@ -97,6 +97,14 @@
                 </div>
             </div>
             <!-- AFINIDADE -->      
+        </aside>
+        <aside>
+            <div id="logP">
+                <div id="logF">
+
+                </div>
+                
+            </div>
         </aside>
         <!-- ENTRADA INCIAL PORTA -->
         <section>
@@ -136,11 +144,11 @@
 
                 </div>
             </div>
-        <p id="pc_fala1">
+        <p id="pc_fala1" >
             Bem-vindo à South Park Elementary! Aqui defendemos respeito, igualdade e inclusão, certo? Você se compromete a seguir essas regras?
         </p>
         <div id="pc_resp1">
-            <button type="button" class="respButton" onclick="vaiParaFala('pc',2); relacao('kyle',10); relacao('bebe',10)">
+            <button type="button" class="respButton" onclick="vaiParaFala('pc',2); relacao('kyle',10); relacao('bebe',10);">
                 Sim, senhor! Eu quero ser um aluno exemplar.
             </button>
             <button type="button" class="respButton" onclick="vaiParaFala('pc',3); relacao('butters',10); relacao('kenny',10)">
@@ -515,6 +523,14 @@
 
     <script>
         qntCena = 0;
+        // historico = [];
+        // function addLog(id)
+        // {
+        //     document.getElementById('logF').innerHTML = document.getElementById(`${id}`).innerHTML
+        // }
+        
+       
+        
         //somando afinidade
         function relacao(nomep,qnt)
         {

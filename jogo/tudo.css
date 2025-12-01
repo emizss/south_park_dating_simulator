@@ -377,6 +377,9 @@ color: green;
   flex-direction: row;
   justify-content: center;
   gap: 100px;
+  position: fixed;
+  left: 450px;
+  bottom: 100px;
 }
 #opComida p{
   color: green;
