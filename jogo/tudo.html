@@ -57,16 +57,17 @@
         <nav>
             <ul>
                 <li class="menu">
-                    <img  class="menuImg" src="icones/menuImg.png" alt="icone menu">
+                    <button type="button"><img  class="menuImg" src="icones/menuImg.png" alt="icone menu"></button> 
                     <ul>
                         <li>
-                            historico
+                             <button type="button" class="menuBtn" onclick="mostrarLog()">
+                                historico
+                            </button>
                         </li>
                         <li>
-                            menu
-                        </li>
-                        <li>
-                            configurações
+                            <button type="button" class="menuBtn" onclick="opSair()">
+                                 menu
+                            </button>
                         </li>
                     </ul>
                 </li>
@@ -411,8 +412,15 @@
                 Sentar com os colegas
             </button>
         </div>
+        <div id="refeitorio5">
+            <button type="button" class="opBtn" onclick=" finalAmor()">
+                Encontrar os amigos
+            </button>
+        </div>
+
+        <!-- -->
          <div id="refeitorio4">
-            <button type="button" class="opBtn" onclick="avancar()">
+            <button type="button" class="opBtn" onclick="vaiParaFundo('recreio','Parque'); vaiParaDecisao('refeitorio',5); telaElementosRR() ">
                 Ir brincar no parque
             </button>
         </div>
@@ -438,6 +446,63 @@
                 <p>$3</p>
             </div>
          </div>
+
+         <!-- FALAS FINAIS YAYAY -->
+          <p id="kyle_fala3">
+            Sabe… eu gosto de conversar com você. É raro achar alguém sensato por aqui. Quer andar comigo no recreio?
+        </p>
+        <div id="kyle_resp3">
+            <button type="button" class="respButton" onclick="vaiParaFundo('win','Kyle'); telaElementosFim()">
+                Sim!
+            </button>
+            <button type="button" class="respButton" onclick="vaiParaFundo('end','Kyle'); telaElementosFim()">
+                Ehh, não.
+            </button>
+        </div>
+        <p id="kenny_fala2">
+            Mmmph rmphh… (Eu gosto de você. Anda comigo?)
+        </p>
+        <div id="kenny_resp2">
+            <button type="button" class="respButton" onclick="vaiParaFundo('win','Kenny'); telaElementosFim()">
+                Sim, adoro seu jeitinho tímido!
+            </button>
+            <button type="button" class="respButton" onclick="vaiParaFundo('end','Kenny'); telaElementosFim()">
+                Não, pobre.
+            </button>
+        </div>
+        <p id="butters_fala3">
+            Aw, caramba… nunca pensei que alguém fosse gostar de mim de verdade. Quer andar de mãos dadas?
+        </p>
+        <div id="butters_resp3">
+            <button type="button" class="respButton" onclick="vaiParaFundo('win','Butters'); telaElementosFim()">
+                Golly! Sim.
+            </button>
+            <button type="button" class="respButton" onclick="vaiParaFundo('end','Butters'); telaElementosFim()">
+                Hmm, não.
+            </button>
+        </div>
+        <p id="bebe_fala2">
+            Sabia que você era diferente! Vamos andar de mãos dadas para todo mundo ver?
+        </p>
+        <div id="bebe_resp2">
+            <button type="button" class="respButton" onclick="vaiParaFundo('win','Bebe'); telaElementosFim()">
+                Aii, sim!
+            </button>
+            <button type="button" class="respButton" onclick="vaiParaFundo('end','Bebe'); telaElementosFim()">
+                Não kk
+            </button>
+        </div>
+        <p id="cartman_fala2">
+            Escuta, pensei bem… você não é tão idiota quanto o Kyle. Quer andar comigo no recreio?
+        </p>
+        <div id="cartman_resp2">
+            <button type="button" class="respButton" onclick="vaiParaFundo('win','Cartman'); telaElementosFim()">
+                Sim!
+            </button>
+            <button type="button" class="respButton" onclick="vaiParaFundo('end','Cartman'); telaElementosFim()">
+                Não, você precisa perder uns quilos...
+            </button>
+        </div>
      <!-- AFINIDADE -->
       
      
@@ -473,7 +538,7 @@
             personagens[nomep].afinidade += qnt
             document.getElementById(`F${nomep}`).innerHTML = personagens[nomep].afinidade
         }
-        {
+        function telaElementos (){
             document.getElementById('avanca').style.display = 'none';
             document.getElementById('paiEspacoFR').style.display = 'flex';
             document.getElementById('paiEspacoD').style.display = 'none';
@@ -607,11 +672,6 @@
             }
             if(qntCena == 15)
             {
-                document.body.style.backgroundImage = "url('cenario/recreioParque.png')";
-                telaElementosR()
-            }
-            if(qntCena == 16)
-            {
                 finalAmor();
             }
             qntCena++;
@@ -691,7 +751,33 @@
         
         function finalAmor()
         {
-            
+            maisAmor()
+            telaElementos()
+            if(apaixonado == personagens.kyle.nome)
+            {
+                vaiParaFundo('ffala','Kyle');
+                vaiParaFala('kyle',3);
+            }
+            if(apaixonado == personagens.kenny.nome)
+            {
+                vaiParaFundo('ffala','Kenny');
+                vaiParaFala('kenny',2);
+            }
+            if(apaixonado == personagens.cartman.nome)
+            {
+                vaiParaFundo('ffala','Cartman');
+                vaiParaFala('cartman',2);
+            }
+            if(apaixonado == personagens.butters.nome)
+            {
+                vaiParaFundo('ffala','Butters');
+                vaiParaFala('butters',3);
+            }
+            if(apaixonado == personagens.bebe.nome)
+            {
+                vaiParaFundo('ffala','Bebe');
+                vaiParaFala('bebe',2);
+            }
         }
     
     // APRESENTACAO afinidade
@@ -796,7 +882,14 @@ function jogarCartmanOuHitler() {
     // inicia o jogo
     perguntar();
 }
-    
+    function opSair(){
+       respMenu = prompt("Você deseja voltar para o menu? Seu progresso será perdido. \n\n1) Não.\n2) Sim.");
+       if(respMenu == 2)
+       {
+         window.location.href = "../inicio/menu.html";  
+       }
+
+    }
 
     </script>
     

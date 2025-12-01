@@ -25,7 +25,6 @@ nav {
 }
 .menu {
  position: relative;
-  
 }
 .menu > img {
   cursor: pointer;
@@ -56,6 +55,11 @@ nav {
 .menuImg{
     width: 24px;
 }
+.menuBtn{
+  border: none;
+  background-color: rgba(240, 248, 255, 0);
+}
+
 .audio img{
     width: 70px;
     position: fixed;
@@ -235,8 +239,8 @@ nav {
 #botaoOver{
   display: none;
   justify-content: center;
-  bottom: 100px;
-  left: 40px;
+  bottom: 0px;
+  justify-self: center;
 }
 #botaoOver a{
     text-decoration: none;
@@ -383,4 +387,27 @@ color: green;
 #opComida button:hover{
   transform: scale(1.1); 
   border: 2px solid gray;
+}
+#butters_resp3
+{
+   display: none;
+}
+#cartman_resp2
+{
+   display: none;
+}
+#kyle_resp3
+{
+   display: none;
+}
+#kenny_resp2
+{
+   display: none;
+}
+#bebe_resp2
+{
+   display: none;
+}
+#refeitorio5{
+  display: none;
 }
