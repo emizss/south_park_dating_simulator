@@ -1,4 +1,4 @@
-https://uiverse.io/CharandeepSingh01/curly-husky-35
+Fiz tudo usando flex então css ta bugado
 
 Pontuação 
 Diálogo diretor PC:
