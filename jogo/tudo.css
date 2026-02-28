@@ -64,6 +64,9 @@ nav {
     width: 70px;
     position: fixed;
 }
+#msc audio{
+  background-image: url(icones/audio.png);
+}
 .audio{
     display: flex;
     justify-content: flex-end;
